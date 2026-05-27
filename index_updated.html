@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omkar Kishor Rasal — AI PM · APM · Chief of Staff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0a0b14;--bg-2:#0e0f1c;--bg-3:#131428;
+  --purple:#7c5cbf;--purple-2:#9b7dd4;--purple-3:#b89ee8;
+  --purple-dim:rgba(124,92,191,0.12);--border:rgba(124,92,191,0.2);--border-2:rgba(232,228,240,0.07);
+  --off:#e8e4f0;--muted:rgba(232,228,240,0.45);
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Outfit',sans-serif;--mono:'DM Mono',monospace;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--off);font-family:var(--sans);line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}ul{list-style:none;}
+::selection{background:var(--purple);color:#fff;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px;}
+body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.cursor{width:10px;height:10px;background:var(--purple-2);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;mix-blend-mode:difference;}
+.cursor-ring{width:36px;height:36px;border:1px solid rgba(124,92,191,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .18s var(--ease);}
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3.5rem;transition:background .4s,border-color .4s;}
+nav.scrolled{background:rgba(10,11,20,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--serif);font-size:1.25rem;color:var(--purple-3);letter-spacing:.04em;}
+.nav-links{display:flex;gap:1.8rem;}
+.nav-links a{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s;position:relative;white-space:nowrap;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--purple-2);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);}
+.nav-links a:hover{color:var(--off);}.nav-links a:hover::after{transform:scaleX(1);}
+.nav-resume{font-size:.68rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--purple-3);border:1px solid var(--border);padding:.4rem 1rem;border-radius:4px;transition:background .2s,color .2s;white-space:nowrap;}
+.nav-resume:hover{background:var(--purple);color:#fff;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.3rem;}
+.hamburger span{width:22px;height:1px;background:var(--off);transition:all .3s;display:block;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:400;background:rgba(10,11,20,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--off);transition:color .2s;}
+.mobile-menu a:hover{color:var(--purple-3);}
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:9rem 3.5rem 5rem;position:relative;overflow:hidden;}
+.hero-bg-text{position:absolute;bottom:-1rem;right:-1rem;font-family:var(--serif);font-size:clamp(5rem,14vw,14rem);font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(124,92,191,.07);line-height:1;pointer-events:none;white-space:nowrap;z-index:2;user-select:none;}
+.hero-glow{position:absolute;top:-15%;left:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(124,92,191,.1) 0%,transparent 70%);pointer-events:none;z-index:2;}
+.hero-glow-2{position:absolute;bottom:0;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,.06) 0%,transparent 70%);pointer-events:none;z-index:2;}
+.hero-content{position:relative;z-index:3;max-width:860px;}
+.hero-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--purple-2);animation:blink 2.4s infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.hero-eyebrow-text{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-3);}
+h1.hero-name{font-family:var(--serif);font-size:clamp(3rem,8vw,7rem);font-weight:300;line-height:.95;letter-spacing:-.03em;margin-bottom:1.8rem;}
+h1.hero-name em{font-style:italic;color:var(--purple-3);}
+h1.hero-name .line{display:block;overflow:hidden;}
+h1.hero-name .line span{display:block;transform:translateY(110%);animation:lineUp .9s var(--ease) forwards;}
+h1.hero-name .line:nth-child(2) span{animation-delay:.12s;}
+h1.hero-name .line:nth-child(3) span{animation-delay:.22s;}
+@keyframes lineUp{to{transform:translateY(0);}}
+.hero-tagline{font-size:.97rem;font-weight:300;color:var(--muted);max-width:500px;margin-bottom:.6rem;line-height:1.8;opacity:0;animation:fadeUp .8s .5s var(--ease) forwards;}
+.hero-sub{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s .65s var(--ease) forwards;}
+.hero-sub span{color:var(--purple-3);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s var(--ease) forwards;}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;opacity:0;animation:fadeUp .8s 1s var(--ease) forwards;flex-wrap:wrap;}
+.hero-stat-num{font-family:var(--serif);font-size:1.9rem;color:var(--purple-3);line-height:1;}
+.hero-stat-label{font-size:.65rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;}
+.hero-scroll{position:absolute;bottom:2.5rem;right:3.5rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:0;animation:fadeUp 1s 1.2s var(--ease) forwards;}
+.hero-scroll span{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;}
+.hero-scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--purple),transparent);animation:scrollLine 2s infinite;}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+/* BUTTONS */
+.btn-purple{background:var(--purple);color:#fff;padding:.8rem 2rem;border-radius:4px;font-size:.73rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:all .25s var(--ease);display:inline-block;}
+.btn-purple:hover{background:var(--purple-2);transform:translateY(-2px);box-shadow:0 12px 30px rgba(124,92,191,.35);}
+.btn-outline{background:transparent;color:var(--off);border:1px solid var(--border-2);padding:.8rem 2rem;border-radius:4px;font-size:.73rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;transition:all .25s var(--ease);display:inline-block;}
+.btn-outline:hover{border-color:var(--purple-2);color:var(--purple-3);transform:translateY(-2px);}
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.9rem 0;}
+.marquee-track{display:flex;align-items:center;gap:2rem;width:max-content;animation:marquee 40s linear infinite;}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee-item{font-size:.78rem;font-weight:300;color:var(--muted);white-space:nowrap;letter-spacing:.04em;}
+.marquee-item em{font-style:normal;font-weight:600;color:var(--purple-3);margin-right:.3rem;}
+.marquee-sep{color:var(--purple);font-size:.6rem;opacity:.5;flex-shrink:0;}
+/* SECTIONS */
+.section{padding:6rem 3.5rem;position:relative;z-index:3;}
+.section-inner{max-width:1060px;margin:0 auto;}
+.section-header{margin-bottom:3.5rem;}
+.section-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.6rem;display:flex;align-items:center;gap:.8rem;}
+.section-label::before{content:'';width:24px;height:1px;background:var(--purple);}
+h2.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;letter-spacing:-.02em;}
+h2.section-title em{font-style:italic;color:var(--purple-3);}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:0 3.5rem;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
+/* ABOUT */
+#about{background:var(--bg);}
+.about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:4.5rem;align-items:start;}
+.about-name-block{padding:2.2rem;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;position:relative;overflow:hidden;}
+.about-name-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--purple),var(--purple-3),transparent);}
+.about-name-glow{position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:radial-gradient(circle,rgba(124,92,191,.15) 0%,transparent 70%);pointer-events:none;}
+.about-initials{font-family:var(--serif);font-size:4.5rem;font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(124,92,191,.25);line-height:1;margin-bottom:.8rem;}
+.about-name{font-family:var(--serif);font-size:1.75rem;font-weight:400;color:var(--off);line-height:1.2;margin-bottom:.3rem;}
+.about-designation{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.2rem;}
+.about-company{font-size:.78rem;font-weight:300;color:var(--muted);}
+.about-stat-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:1.2rem;}
+.about-stat{background:var(--bg-3);padding:.85rem .7rem;text-align:center;}
+.about-stat-num{font-family:var(--serif);font-size:1.4rem;color:var(--purple-3);line-height:1;}
+.about-stat-label{font-family:var(--mono);font-size:.53rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;}
+.about-right{display:flex;flex-direction:column;gap:1.8rem;}
+.about-lead{font-family:var(--serif);font-size:1.4rem;font-weight:300;line-height:1.55;color:var(--off);border-left:2px solid var(--purple);padding-left:1.4rem;}
+.about-body{font-size:.87rem;font-weight:300;color:var(--muted);line-height:1.9;}
+.about-body p+p{margin-top:.9rem;}
+.about-tags{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+.about-tag{display:flex;align-items:center;gap:.7rem;padding:.7rem 1rem;border:1px solid var(--border);border-radius:4px;background:var(--purple-dim);font-size:.76rem;color:var(--muted);transition:border-color .2s,color .2s;}
+.about-tag:hover{border-color:var(--purple-2);color:var(--off);}
+.about-tag-icon{color:var(--purple-3);font-size:.9rem;flex-shrink:0;}
+/* EXPERIENCE */
+#experience{background:var(--bg-2);}
+.eric-card{border:1px solid var(--border);border-radius:6px;background:var(--bg-3);padding:2.2rem;position:relative;overflow:hidden;}
+.eric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--purple),var(--purple-3),transparent);}
+.eric-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;margin-bottom:1.8rem;flex-wrap:wrap;}
+.eric-badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.4rem;display:inline-flex;align-items:center;gap:.5rem;}
+.eric-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--purple-3);animation:blink 2s infinite;flex-shrink:0;}
+.eric-role{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:var(--off);line-height:1.2;margin-bottom:.35rem;}
+.eric-company{font-size:.8rem;font-weight:300;color:var(--muted);}
+.eric-promo-tag{background:var(--purple-dim);border:1px solid var(--border);padding:.6rem 1rem;border-radius:4px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-3);text-align:center;line-height:1.5;flex-shrink:0;}
+.eric-bullets-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem;}
+.eric-bullet-block{display:flex;flex-direction:column;gap:.6rem;}
+.eric-bullet-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-3);padding-bottom:.45rem;border-bottom:1px solid var(--border);margin-bottom:.2rem;}
+.eric-bullet{font-size:.83rem;font-weight:300;color:var(--muted);line-height:1.75;display:flex;gap:.65rem;align-items:flex-start;}
+.eric-bullet::before{content:'—';color:var(--purple);flex-shrink:0;margin-top:.05rem;}
+.eric-tags{display:flex;gap:.4rem;flex-wrap:wrap;}
+.t-tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border-2);border-radius:3px;padding:.1rem .4rem;color:var(--muted);}
+.t-tag.hi{border-color:rgba(124,92,191,.45);color:var(--purple-3);}
+/* WORK */
+#work{background:var(--bg);}
+.work-list{display:flex;flex-direction:column;}
+.work-item{border-top:1px solid var(--border-2);transition:border-color .2s;}
+.work-item:last-child{border-bottom:1px solid var(--border-2);}
+.work-item.open{border-color:var(--border);}
+.work-trigger{width:100%;display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:1.8rem;padding:1.8rem 0;cursor:pointer;background:none;border:none;text-align:left;color:var(--off);}
+.work-num{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--purple-3);}
+.work-trigger-meta{display:flex;flex-direction:column;gap:.35rem;}
+.work-trigger-title{font-family:var(--serif);font-size:1.35rem;font-weight:400;line-height:1.2;transition:color .2s;}
+.work-trigger:hover .work-trigger-title{color:var(--purple-3);}
+.work-trigger-tags{display:flex;gap:.35rem;flex-wrap:wrap;}
+.wtag{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border-2);border-radius:3px;padding:.13rem .45rem;color:var(--muted);}
+.wtag.hi{border-color:rgba(124,92,191,.4);color:var(--purple-3);}
+.work-icon{width:38px;height:38px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .3s var(--ease);flex-shrink:0;color:var(--purple-3);}
+.work-item.open .work-icon{background:var(--purple);border-color:var(--purple);color:#fff;transform:rotate(45deg);}
+.work-body{display:none;padding:0 0 2.5rem;}
+.work-item.open .work-body{display:block;}
+.work-body-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;padding-top:1rem;}
+.work-col{display:flex;flex-direction:column;gap:1.5rem;}
+.work-section-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.5rem;padding-bottom:.45rem;border-bottom:1px solid var(--border);}
+.work-section p,.work-section li{font-size:.83rem;font-weight:300;color:var(--muted);line-height:1.8;}
+.work-section ul{display:flex;flex-direction:column;gap:.28rem;}
+.work-section li{display:flex;gap:.55rem;}
+.work-section li::before{content:'—';color:var(--purple);flex-shrink:0;}
+.work-outcome{margin-top:1.8rem;padding:1.3rem 1.8rem;background:var(--purple-dim);border-left:2px solid var(--purple);}
+.work-outcome-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.5rem;}
+.work-outcome p{font-size:.83rem;color:var(--muted);line-height:1.8;}
+.work-outcome strong{color:var(--off);font-weight:500;}
+.work-links{display:flex;gap:.7rem;margin-top:1rem;flex-wrap:wrap;}
+.work-link{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-3);border:1px solid var(--border);padding:.38rem .85rem;border-radius:3px;transition:background .2s,color .2s;}
+.work-link:hover{background:var(--purple);color:#fff;}
+/* SIDE PROJECTS */
+#sideprojects{background:var(--bg-2);}
+.side-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.side-card{padding:1.8rem;border:1px solid var(--border-2);border-radius:6px;background:var(--bg-3);transition:border-color .25s;}
+.side-card:hover{border-color:var(--border);}
+.side-card-badge{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.6rem;}
+.side-card-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--off);margin-bottom:.6rem;line-height:1.3;}
+.side-card-desc{font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:1rem;}
+.side-card-tags{display:flex;gap:.35rem;flex-wrap:wrap;}
+/* PM PROBLEMS */
+#problems{background:var(--bg);}
+.pm-tabs{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:2.5rem;}
+.pm-tab{flex:1;padding:.7rem .8rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;background:transparent;border:none;border-right:1px solid var(--border);transition:background .2s,color .2s;text-align:center;}
+.pm-tab:last-child{border-right:none;}.pm-tab.active{background:var(--purple);color:#fff;}
+.pm-tab-pane{display:none;}.pm-tab-pane.active{display:block;}
+.pm-posts{display:flex;flex-direction:column;}
+.pm-post{border-top:1px solid var(--border-2);}.pm-post:last-child{border-bottom:1px solid var(--border-2);}
+.pm-post.open{border-color:var(--border);}
+.pm-post-trigger{padding:1.5rem 0;cursor:pointer;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto auto;column-gap:1.2rem;row-gap:.3rem;align-items:start;}
+.pm-post-meta{display:flex;align-items:center;gap:.7rem;grid-column:1;grid-row:1;flex-wrap:wrap;}
+.pm-post-type{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-3);}
+.pm-post-status{font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:.13rem .45rem;border-radius:3px;}
+.pm-post-status.done{color:#6fcf8a;background:rgba(111,207,138,.1);border:1px solid rgba(111,207,138,.25);}
+.pm-post-status.wip{color:var(--purple-3);background:var(--purple-dim);border:1px solid var(--border);}
+.pm-post-title{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--off);line-height:1.25;grid-column:1;grid-row:2;transition:color .2s;}
+.pm-post-trigger:hover .pm-post-title{color:var(--purple-3);}
+.pm-post-preview{font-family:var(--mono);font-size:.6rem;letter-spacing:.07em;color:var(--muted);grid-column:1;grid-row:3;}
+.pm-post-chevron{grid-column:2;grid-row:1/4;align-self:center;width:34px;height:34px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--purple-3);transition:transform .3s var(--ease),background .2s;}
+.pm-post.open .pm-post-chevron{transform:rotate(180deg);background:var(--purple);color:#fff;}
+.pm-post-body{display:none;padding:0 0 2rem;}
+.pm-post.open .pm-post-body{display:block;}
+.pm-post-content{border-left:2px solid var(--border);padding-left:1.8rem;display:flex;flex-direction:column;gap:1.4rem;}
+.pm-section-h{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.5rem;}
+.pm-section p{font-size:.83rem;font-weight:300;color:var(--muted);line-height:1.85;}
+.pm-section p strong{color:var(--off);font-weight:500;}
+.pm-section p em{color:var(--purple-3);font-style:normal;}
+.pm-h-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.35rem;}
+.pm-h-item{display:flex;gap:.75rem;align-items:flex-start;font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.7;}
+.pm-h-rank{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-3);background:var(--purple-dim);border:1px solid var(--border);padding:.1rem .4rem;border-radius:3px;flex-shrink:0;margin-top:.12rem;}
+.pm-key-insight{margin-top:.4rem;padding:.9rem 1.1rem;background:var(--purple-dim);border-left:2px solid var(--purple);font-size:.8rem;font-weight:300;color:var(--muted);line-height:1.7;font-style:italic;}
+.pm-key-insight strong{color:var(--purple-3);font-style:normal;}
+/* SKILLS */
+#skills{background:var(--bg-2);}
+.skills-layout{display:grid;grid-template-columns:1fr 2fr;gap:4.5rem;}
+.skills-left h3{font-family:var(--serif);font-size:1.6rem;font-weight:300;line-height:1.4;margin-bottom:1.2rem;}
+.skills-left p{font-size:.83rem;font-weight:300;color:var(--muted);line-height:1.8;}
+.skills-right{display:flex;flex-direction:column;gap:2.2rem;}
+.skill-cat-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem;}
+.skill-cat-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.4rem;}
+.pill{font-size:.73rem;font-weight:400;padding:.28rem .75rem;border:1px solid var(--border-2);border-radius:100px;color:var(--muted);transition:border-color .2s,color .2s,background .2s;}
+.pill:hover{border-color:var(--purple-2);color:var(--off);background:var(--purple-dim);}
+/* ACHIEVEMENTS */
+#achievements{background:var(--bg);}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+.ach-card{padding:1.8rem;border:1px solid var(--border-2);border-radius:6px;position:relative;overflow:hidden;background:var(--bg-2);transition:border-color .25s,transform .25s;}
+.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--purple),transparent);transform:scaleX(0);transition:transform .4s var(--ease);}
+.ach-card:hover{border-color:var(--border);transform:translateY(-4px);}
+.ach-card:hover::before{transform:scaleX(1);}
+.ach-rank{font-family:var(--serif);font-size:2.1rem;font-weight:300;color:var(--purple-3);line-height:1;margin-bottom:.4rem;}
+.ach-name{font-size:.86rem;font-weight:500;color:var(--off);margin-bottom:.35rem;}
+.ach-desc{font-size:.74rem;font-weight:300;color:var(--muted);line-height:1.65;}
+/* CONTACT */
+#contact{background:var(--bg-2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.contact-statement{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:300;line-height:1.55;color:var(--off);margin-bottom:2rem;}
+.contact-statement em{font-style:italic;color:var(--purple-3);}
+.contact-items{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem;}
+.contact-item{display:flex;align-items:center;gap:1rem;font-size:.82rem;color:var(--muted);padding:.85rem 1.1rem;border:1px solid var(--border-2);border-radius:4px;transition:border-color .2s,color .2s;}
+.contact-item:hover{border-color:var(--border);color:var(--off);}
+.contact-item-icon{color:var(--purple-3);width:20px;text-align:center;}
+.resume-row{display:flex;gap:1rem;flex-wrap:wrap;}
+.currently-card{padding:1.8rem;border:1px solid var(--border);border-radius:6px;background:var(--purple-dim);}
+.currently-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-3);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+.currently-label::before{content:'';width:6px;height:6px;background:var(--purple-3);border-radius:50%;animation:blink 2s infinite;}
+.currently-items{display:flex;flex-direction:column;gap:.65rem;}
+.currently-item{display:flex;align-items:flex-start;gap:.65rem;font-size:.82rem;color:var(--muted);line-height:1.5;}
+.currently-item::before{content:'→';color:var(--purple-3);flex-shrink:0;}
+/* FOOTER */
+footer{border-top:1px solid var(--border-2);padding:1.8rem 3.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;position:relative;z-index:3;}
+.footer-copy{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--muted);}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--purple-3);}
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1.1rem 1.4rem;}.nav-links{display:none;}.hamburger{display:flex;}
+  .section{padding:4rem 1.4rem;}#hero{padding:7rem 1.4rem 3.5rem;}
+  .hero-bg-text{font-size:4.5rem;}.hero-scroll{display:none;}.hero-stats{gap:1.5rem;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem;}
+  .about-tags{grid-template-columns:1fr;}.eric-bullets-grid{grid-template-columns:1fr;gap:1.2rem;}
+  .eric-card-header{flex-direction:column;}.work-trigger{grid-template-columns:50px 1fr 36px;gap:1rem;}
+  .work-body-grid{grid-template-columns:1fr;gap:1.2rem;}.skills-layout{grid-template-columns:1fr;gap:2rem;}
+  .ach-grid{grid-template-columns:1fr 1fr;}.side-grid{grid-template-columns:1fr;}
+  .pm-tabs{flex-wrap:wrap;}.pm-tab{border-right:none;border-bottom:1px solid var(--border);flex:none;width:100%;}
+  .pm-tab:last-child{border-bottom:none;}.divider{margin:0 1.4rem;}
+  footer{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:600px){.ach-grid{grid-template-columns:1fr;}h1.hero-name{font-size:2.8rem;}}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">Background</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#work" onclick="closeMobile()">Work Shipped</a>
+  <a href="#problems" onclick="closeMobile()">PM Problems</a>
+  <a href="#sideprojects" onclick="closeMobile()">Side Projects</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="navbar">
+  <div class="nav-logo">Omkar Rasal</div>
+  <div class="nav-links">
+    <a href="#about">Background</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Work Shipped</a>
+    <a href="#problems">PM Problems</a>
+    <a href="#sideprojects">Side Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div style="display:flex;gap:.8rem;align-items:center;">
+    <a href="#contact" class="nav-resume">Resume</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div><div class="hero-glow-2"></div>
+  <div class="hero-bg-text">OMKAR</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><div class="hero-dot"></div><span class="hero-eyebrow-text">Pune, India</span></div>
+    <h1 class="hero-name">
+      <span class="line"><span>I build AI products</span></span>
+      <span class="line"><span>that run <em>in production</em></span></span>
+      <span class="line"><span>— not demos.</span></span>
+    </h1>
+    <p class="hero-tagline">Shipped a production AI hiring agent. Built a PMO from zero. Designed the company's execution system. All as an intern, working directly with the CEO, CMO, and CTO.</p>
+    <p class="hero-sub">Founder's Office @ <span>ERIC Robotics</span> &nbsp;·&nbsp; APM · AI PM · Chief of Staff &nbsp;·&nbsp; <span>VIT Pune, May 2026</span></p>
+    <div class="hero-btns"><a href="#work" class="btn-purple">View Work ↓</a><a href="#contact" class="btn-outline">Download Resume</a></div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<div class="marquee-wrap"><div class="marquee-track">
+  <span class="marquee-item"><em>70–80%</em> HR Screening Effort Reduced</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>0</em> Engineering Dependency Post-Launch</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>3 Weeks</em> PMO Adopted Across 4 Teams</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>1,400+</em> Platform Users</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>AIR 5</em> Formula Bharat 2024 — EV Category</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>925+</em> Teams Beaten at SIH 2025</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>1 Patent</em> Filed — App. No. 202521093278</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>200+</em> Real Resumes Tested on LLM Prompt</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>2 Weeks</em> HRP Formula Adopted by Founders</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>70–80%</em> HR Screening Effort Reduced</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>0</em> Engineering Dependency Post-Launch</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>3 Weeks</em> PMO Adopted Across 4 Teams</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>1,400+</em> Platform Users</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>AIR 5</em> Formula Bharat 2024 — EV Category</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>925+</em> Teams Beaten at SIH 2025</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>1 Patent</em> Filed — App. No. 202521093278</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>200+</em> Real Resumes Tested on LLM Prompt</span><span class="marquee-sep">✦</span>
+  <span class="marquee-item"><em>2 Weeks</em> HRP Formula Adopted by Founders</span><span class="marquee-sep">✦</span>
+</div></div>
+<div class="divider"></div>
+
+<!-- BACKGROUND -->
+<section id="about" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">Background</p><h2 class="section-title">Engineering → Robotics<br><em>→ AI Product.</em></h2></div>
+  <div class="about-grid">
+    <div class="about-left reveal">
+      <div class="about-name-block">
+        <div class="about-name-glow"></div>
+        <div class="about-initials">OK</div>
+        <div class="about-name">Omkar Kishor Rasal</div>
+        <div class="about-designation">Founder's Office Intern — Product &amp; Strategy</div>
+        <div class="about-company">ERIC Robotics · Pune · Working with CEO, CMO &amp; CTO</div>
+        <div class="about-stat-row">
+          <div class="about-stat"><div class="about-stat-num">8.34</div><div class="about-stat-label">CGPA</div></div>
+          <div class="about-stat"><div class="about-stat-num">2026</div><div class="about-stat-label">Batch</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-right">
+      <p class="about-lead reveal">I come from mechanical engineering and robotics — which means I think in systems, not just features.</p>
+      <div class="about-body reveal reveal-delay-1">
+        <p>At ERIC Robotics, I shipped an AI hiring system using MCP servers and LLMs, built the company's PMO from scratch, and ran financial MIS across PSU projects — all working directly with the CEO, CMO, and CTO.</p>
+        <p>Promoted from Robotics Intern to Founder's Office within two months. I understand the full stack of building AI products: defining data requirements, iterating on prompting logic, designing for model failure, and shipping to non-technical users with zero engineering dependency.</p>
+        <p>Looking for roles where AI, product thinking, and real execution converge.</p>
+      </div>
+      <div class="about-tags reveal reveal-delay-2">
+        <div class="about-tag"><span class="about-tag-icon">⚙</span>Systems thinker — designed for failure modes, not just happy paths</div>
+        <div class="about-tag"><span class="about-tag-icon">⚡</span>PRD-first — problem statement and metrics before writing code</div>
+        <div class="about-tag"><span class="about-tag-icon">🤖</span>AI shipped — MCP servers, LLMs in production</div>
+        <div class="about-tag"><span class="about-tag-icon">📊</span>Numbers-first — every claim has a metric attached</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">Experience</p><h2 class="section-title">Where I work <em>right now.</em></h2></div>
+  <div class="eric-card reveal">
+    <div class="eric-card-header">
+      <div>
+        <div class="eric-badge">Current Role · Aug 2025 — Present</div>
+        <div class="eric-role">Founder's Office Intern — Product &amp; Strategy</div>
+        <div class="eric-company">ERIC Robotics · Pune &nbsp;·&nbsp; Working directly with CEO, CMO &amp; CTO</div>
+      </div>
+      <div class="eric-promo-tag">Promoted within<br>2 months</div>
+    </div>
+    <div class="eric-bullets-grid">
+      <div class="eric-bullet-block">
+        <div class="eric-bullet-label">Product</div>
+        <div class="eric-bullet">AI Hiring Agent — Shipped: Owned full PRD, user research, system design, and launch of a production AI hiring agent using Zoho Recruit API + OpenAI API + MCP orchestration + batch processing + ATS write-back. Enabled HR natural language querying; reduced screening effort by 70–80% with zero engineering dependency post-launch.</div>
+        <div class="eric-bullet">Product Sense in Practice: Identified hiring workflow gaps proactively, mapped friction via user interviews, defined success metrics (screening time, classification %, HR adoption), and shipped measurable improvements.</div>
+      </div>
+      <div class="eric-bullet-block">
+        <div class="eric-bullet-label">Operations &amp; Strategy</div>
+        <div class="eric-bullet">Built PMO from scratch — sprint cycles, QoQ roadmaps, sync cadences — adopted across 4 teams in 3 weeks</div>
+        <div class="eric-bullet">HRP Formula: Built a custom engineer allocation model across project, task &amp; subtask levels; adopted by co-founders across active projects within 2 weeks</div>
+        <div class="eric-bullet">Led GTM strategy, market sizing, and pitch decks for the Autonomous Robot</div>
+        <div class="eric-bullet">Ran monthly financial MIS across live PSU projects — QoQ/YoY variance analysis delivered directly to founders</div>
+      </div>
+    </div>
+    <div class="eric-tags">
+      <span class="t-tag hi">AI PM</span><span class="t-tag hi">Shipped · Production</span>
+      <span class="t-tag">MCP Servers</span><span class="t-tag">PRD</span><span class="t-tag">PMO</span>
+      <span class="t-tag">GTM</span><span class="t-tag">HRP Formula</span><span class="t-tag">Financial MIS</span>
+    </div>
+  </div>
+</div></section>
+<div class="divider"></div>
+
+<!-- WORK SHIPPED -->
+<section id="work" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">Work Shipped</p><h2 class="section-title">Built. Launched. <em>Measured.</em></h2></div>
+  <div class="work-list">
+
+    <div class="work-item reveal">
+      <button class="work-trigger" onclick="toggleWork(this)">
+        <span class="work-num">01</span>
+        <div class="work-trigger-meta">
+          <span class="work-trigger-title">AI Hiring Agent — MCP + Zoho + OpenAI</span>
+          <div class="work-trigger-tags"><span class="wtag hi">Shipped · Production</span><span class="wtag">AI PM</span><span class="wtag">LLM</span><span class="wtag">PRD-first</span><span class="wtag">ERIC Robotics</span></div>
+        </div>
+        <div class="work-icon">+</div>
+      </button>
+      <div class="work-body"><div class="work-body-grid">
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Context</div><p>Manual resume screening at ERIC was slow, inconsistent, and engineer-dependent. Every candidate required human review — the process didn't scale and HR was the bottleneck.</p></div>
+          <div class="work-section"><div class="work-section-label">My Role</div><p>End-to-end PM — owned PRD, user research, system design, build, deployment, and adoption. No handoffs.</p></div>
+          <div class="work-section"><div class="work-section-label">What I Built</div><ul>
+            <li>MCP server orchestrating Zoho Recruit API + OpenAI API</li>
+            <li>HR types natural language → AI fetches candidates → LLM scores 0–100 → auto-classifies</li>
+            <li>Score &gt;85 → Shortlist · 70–85 → Review · &lt;70 → Reject, written back to ATS</li>
+            <li>Failure-safe batch processor with incremental saves</li>
+          </ul></div>
+        </div>
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Approach</div><ul>
+            <li>PRD-first — problem statement, user flows, success metrics before code</li>
+            <li>Designed scoring rubric (labeling logic) before prompting the model</li>
+            <li>Iterated on LLM prompt after testing on 200+ real resumes</li>
+            <li>Defined success metrics upfront: screening time, classification %, HR adoption rate</li>
+          </ul></div>
+          <div class="work-section"><div class="work-section-label">What I Learned</div><p>Prompt engineering was the hardest part — not the code. Defining evaluation criteria before prompting is the AI PM equivalent of writing acceptance criteria. The rubric IS the product.</p></div>
+        </div>
+      </div>
+      <div class="work-outcome"><div class="work-outcome-label">Outcome</div><p><strong>70–80% reduction in HR screening effort.</strong> Zero engineering dependency post-launch. Non-technical HR users operate it independently today.</p></div>
+      <div class="work-links"><a href="#" class="work-link">GitHub ↗</a><a href="#" class="work-link">Notion PRD ↗</a></div>
+      </div>
+    </div>
+
+    <div class="work-item reveal reveal-delay-1">
+      <button class="work-trigger" onclick="toggleWork(this)">
+        <span class="work-num">02</span>
+        <div class="work-trigger-meta">
+          <span class="work-trigger-title">GTM Strategy — Autonomous Robot</span>
+          <div class="work-trigger-tags"><span class="wtag">Product Strategy</span><span class="wtag">B2G</span><span class="wtag">Deep Tech</span><span class="wtag">ERIC Robotics</span></div>
+        </div>
+        <div class="work-icon">+</div>
+      </button>
+      <div class="work-body"><div class="work-body-grid">
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Context</div><p>ERIC's Autonomous Robot needed a go-to-market strategy for government and enterprise clients. No pricing model, positioning, or launch sequence existed when I joined.</p></div>
+          <div class="work-section"><div class="work-section-label">What I Built</div><ul>
+            <li>Three pricing models: per-use, per-inspection, SaaS subscription</li>
+            <li>Market positioning framework vs. existing manual methods</li>
+            <li>Phased B2G/B2B launch plan (pilot → PSU → scale)</li>
+            <li>Competitive analysis, market sizing, and pitch deck for procurement teams</li>
+          </ul></div>
+        </div>
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Key Insight</div><p>Deep tech products with long B2G procurement cycles need fundamentally different GTM logic than SaaS. I designed for the actual buyer — government procurement committees — not a generic enterprise motion.</p></div>
+        </div>
+      </div>
+      <div class="work-outcome"><div class="work-outcome-label">Outcome</div><p>GTM plan <strong>adopted as the go-to-market blueprint</strong> by co-founders. Adjacent venture evaluation findings triggered R&amp;D initiation on a new product line.</p></div>
+      </div>
+    </div>
+
+    <div class="work-item reveal reveal-delay-2">
+      <button class="work-trigger" onclick="toggleWork(this)">
+        <span class="work-num">03</span>
+        <div class="work-trigger-meta">
+          <span class="work-trigger-title">Program Management Office (PMO) — Built from Zero</span>
+          <div class="work-trigger-tags"><span class="wtag hi">Adopted · 3 Weeks</span><span class="wtag">Operations</span><span class="wtag">0→1</span><span class="wtag">ERIC Robotics</span></div>
+        </div>
+        <div class="work-icon">+</div>
+      </button>
+      <div class="work-body"><div class="work-body-grid">
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Context</div><p>ERIC Robotics had no structured execution system — no sprint cycles, no QoQ tracking, no cross-team sync. Founders had zero visibility into company-wide execution.</p></div>
+          <div class="work-section"><div class="work-section-label">Approach</div><ul>
+            <li>Interviewed every employee to map execution gaps bottom-up before designing top-down</li>
+            <li>Sprint cycles designed based on actual workflow patterns, not templates</li>
+            <li>Built HRP Formula — custom engineer allocation across project, task, subtask levels</li>
+          </ul></div>
+        </div>
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">What I Built</div><ul>
+            <li>Sprint cycles across all departments</li>
+            <li>QoQ roadmaps and cross-team sync cadences</li>
+            <li>HRP Formula — adopted by co-founders for all active projects within 2 weeks</li>
+            <li>Financial MIS — monthly PSU project reporting delivered directly to founders</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="work-outcome"><div class="work-outcome-label">Outcome</div><p>Adopted across <strong>4 teams within 3 weeks.</strong> Co-founders now have QoQ execution visibility for the first time in the company's history.</p></div>
+      </div>
+    </div>
+
+    <div class="work-item reveal">
+      <button class="work-trigger" onclick="toggleWork(this)">
+        <span class="work-num">04</span>
+        <div class="work-trigger-meta">
+          <span class="work-trigger-title">WiseHome — Home Automation App for Elderly Users</span>
+          <div class="work-trigger-tags"><span class="wtag">UX</span><span class="wtag">User Research</span><span class="wtag">Figma</span></div>
+        </div>
+        <div class="work-icon">+</div>
+      </button>
+      <div class="work-body"><div class="work-body-grid">
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Context</div><p>Elderly users struggle with complex home automation interfaces. Existing solutions designed for tech-savvy users — not the demographic that most benefits from home automation.</p></div>
+          <div class="work-section"><div class="work-section-label">Approach</div><ul>
+            <li>Structured user research sessions with elderly participants</li>
+            <li>Identified core friction in onboarding and daily control flows</li>
+            <li>Rapid prototyping with real user feedback at each iteration</li>
+          </ul></div>
+        </div>
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Key Decisions</div><ul>
+            <li>Eliminated nested menus — single-depth navigation throughout</li>
+            <li>Voice command as first-class interaction</li>
+            <li>Onboarding reduced to 3 screens based on user testing</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="work-outcome"><div class="work-outcome-label">Outcome</div><p><strong>40% usability improvement. 25% faster onboarding.</strong> Both measured via structured user testing, not self-reported satisfaction.</p></div>
+      <div class="work-links"><a href="#" class="work-link">Figma Prototype ↗</a></div>
+      </div>
+    </div>
+
+    <div class="work-item reveal reveal-delay-1">
+      <button class="work-trigger" onclick="toggleWork(this)">
+        <span class="work-num">05</span>
+        <div class="work-trigger-meta">
+          <span class="work-trigger-title">Abhivriddhi EDGE — Participant Engagement Platform</span>
+          <div class="work-trigger-tags"><span class="wtag hi">1,400+ Users</span><span class="wtag">MVP</span><span class="wtag">A/B Testing</span><span class="wtag">Growth</span></div>
+        </div>
+        <div class="work-icon">+</div>
+      </button>
+      <div class="work-body"><div class="work-body-grid">
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Context</div><p>1,400+ participants in student training programs had no centralized engagement platform. Communication fragmented, re-engagement zero.</p></div>
+          <div class="work-section"><div class="work-section-label">Approach</div><ul>
+            <li>PRD before build — defined user segments, flows, success metrics</li>
+            <li>A/B tested onboarding copy and CTA placement with clear hypotheses</li>
+            <li>Iterated on registration flow based on drop-off data</li>
+          </ul></div>
+        </div>
+        <div class="work-col">
+          <div class="work-section"><div class="work-section-label">Why It Worked</div><p>Running A/B experiments with clear hypotheses from day one meant every iteration had a direction, not just a change. Most teams build and ship without measuring at all.</p></div>
+        </div>
+      </div>
+      <div class="work-outcome"><div class="work-outcome-label">Outcome</div><p><strong>1,400+ active users. 30% adoption improvement</strong> from A/B experiment findings.</p></div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+<div class="divider"></div>
+<!-- PM PROBLEMS -->
+<section id="problems" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">PM Problems Solved</p><h2 class="section-title">Product thinking <em>in practice.</em></h2></div>
+  <p style="font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.8;max-width:600px;margin-bottom:2.2rem;" class="reveal">Real PM problems worked through the same way I'd approach them in a role — hypothesis-first, framework-driven, numbers-backed. Click any to read the full structured solution inline.</p>
+  <div class="pm-tabs reveal">
+    <button class="pm-tab active" onclick="switchTab(this,'pd')">Product Design</button>
+    <button class="pm-tab" onclick="switchTab(this,'rca')">Root Cause Analysis</button>
+    <button class="pm-tab" onclick="switchTab(this,'metrics')">Metrics</button>
+    <button class="pm-tab" onclick="switchTab(this,'strategy')">Strategy &amp; GTM</button>
+    <button class="pm-tab" onclick="switchTab(this,'guess')">Guesstimates</button>
+  </div>
+
+  <!-- TAB: PRODUCT DESIGN -->
+  <div class="pm-tab-pane active" id="tab-pd"><div class="pm-posts">
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Design</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">How would you improve LinkedIn?</h3>
+        <p class="pm-post-preview">Focus: Job Seekers on mobile · Framework: Clarify → Users → Pain Points → Prioritize → Solutions → Metrics</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Selected Segment &amp; Scope</div><p>Focus: <strong>Job Seekers on mobile</strong> — largest active segment, highest unmet need, direct path to improved retention and revenue. Scope: engagement, not acquisition.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Top Pain Points (Prioritized)</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">P1</span><span>Resume format confusion — unsure about structure to get shortlisted</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">P1</span><span>Profile weaknesses unknown — unaware of flaws causing rejection</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">P2</span><span>Uncertainty about application status</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Solutions</div><p><strong>Resume Reviewer</strong> — receives resume + job category, outputs spelling/grammar corrections, format suggestions, best practices by role. <strong>Mock Interviews</strong> — 1-on-1 with LinkedIn-verified coaches, fee-based, covered under Premium. <strong>Profile Strengthening</strong> — if profile rejected, user sees summary of shortlisted profiles with quantitative differences (skills, certifications, keywords).</p></div>
+        <div class="pm-section"><div class="pm-section-h">Success Metrics</div><p>Resume Reviewer: Resumes reviewed MoM · % change in shortlist rate before vs. after. Mock Interviews: Interviews taken vs. requested ratio · Revenue from subscription. Profile Reco: Recommendations viewed MoM · Job applications submitted per user.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Pick ONE user segment, go deep on 2–3 pain points, and close with measurable success metrics tied to each solution. Generic solutions across all segments score low.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Design</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Design a blood donation product on Facebook.</h3>
+        <p class="pm-post-preview">Framework: Two-sided platform — Donors (supply) + Recipients (demand) + Social graph as moat</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Supply Side — Donors</div><p>Register blood group and location in profile · Push notifications when someone nearby needs your blood group · Availability toggle · <strong>Life Saver badge</strong> after donation — social proof loop that drives further donation behaviour.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Demand Side — Recipients</div><p>Post blood request with group, hospital, units, urgency · Auto-tag location to reach nearby donors · Share to Groups and Stories for amplification · Hospital verification badge builds trust.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Why Facebook Specifically</div><p>Social graph — friend-of-friend requests feel safer · Location data already available · Groups — existing blood donation communities · Massive reach in Tier 2/3 India where alternatives are scarce.</p></div>
+        <div class="pm-section"><div class="pm-section-h">North Star Metric</div><p>Request fulfillment rate — % of blood requests that found a donor within X hours.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> The blood group segmentation IS the matching engine. Build around that core — not just user segments. Facebook's social graph is the moat no standalone app can replicate.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Design</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Design a 'Google Refrigerator'.</h3>
+        <p class="pm-post-preview">Framework: Why this company → Moat → User → Features tied to ecosystem → Metrics</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Positioning</div><p>Not a smart fridge — a <strong>kitchen intelligence hub</strong>. Positioned like Pixel: software-first, ecosystem lock-in over hardware specs. The hardware is the distribution channel for Google's AI.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Target User</div><p>Urban household, 25–45, tech-savvy, health-conscious, dual-income, time-poor, already embedded in Google ecosystem daily.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Core Features</div><p><strong>AI inventory management</strong> — cameras + CV detect items in real time · <strong>Expiry tracking</strong> with proactive alerts · <strong>Google Assistant</strong> — "Hey Google, what can I cook?" → scans inventory → recipe → pulls YouTube video · <strong>Predictive restocking</strong> — learns consumption patterns, auto-orders before runout via Google Shopping.</p></div>
+        <div class="pm-section"><div class="pm-section-h">North Star Metrics</div><p>Food wastage reduction per household · Daily active interactions with Assistant via fridge · Grocery reorder rate through Google Shopping.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> The Pixel analogy is interview gold — it shows strategic market entry thinking, not just feature design. Lead with the ecosystem story, not the hardware specs.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Design</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">You are PM at Google Pay. Design a feature for paying credit card bills.</h3>
+        <p class="pm-post-preview">Framework: User pain → GPay's moat → Features → North Star Metric</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Core User Problems</div><p>Forgetting due dates → late fees + credit score damage · Multiple cards, multiple apps → scattered experience · Rewards go unclaimed · Overspending → bill shock at month end.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Key Features</div><p><strong>Bill Payment Hub</strong> — all cards in one dashboard, one-tap payment · <strong>Smart Autopay</strong> — with balance condition ('Only autopay if balance &gt; ₹5,000') · <strong>Spending Intelligence Dashboard</strong> — category-wise spend, utilization rate, projected bill · <strong>Smart Card Recommendation</strong> — "Use your Axis card for this Swiggy order — 10% cashback."</p></div>
+        <div class="pm-section"><div class="pm-section-h">GPay's Moat</div><p>Existing UPI transaction data already knows spending patterns · Wide merchant network enables real-time offer matching · Android dominance — default payment app for 500M+ users in India.</p></div>
+        <div class="pm-section"><div class="pm-section-h">North Star Metric</div><p>Monthly credit card bills paid via GPay per active user.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> The autopay balance condition and transaction-based card recommendation are the two standout features — they show deep user empathy AND platform intelligence simultaneously. That's the 9/10 delta.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Design</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Design a skip feature for a video streaming service.</h3>
+        <p class="pm-post-preview">Framework: Three-sided tension (User + Advertiser + Platform) → Types of skip → Design system → NSM</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Three-Sided Tension</div><p><strong>User</strong> wants to skip everything · <strong>Advertiser</strong> wants full attention · <strong>Platform</strong> needs revenue but can't afford churn. Any skip design must balance all three.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Types of Skip by Revenue Impact</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">High tension</span><span>Ad skip — highest revenue risk, highest user value</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Zero risk</span><span>Intro skip — no revenue impact, high satisfaction gain</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Low risk</span><span>Recap skip — reduces binge-session drop-off</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Ad Skip Design System</div><p><strong>Earned Skip</strong> — watch full ad → earn 3 free skip credits · <strong>Smart Ad Matching</strong> — relevant ads get skipped 40% less · <strong>Premium Skip Pass</strong> — ₹49/month for unlimited skips.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Build Sequence</div><p>First: Intro/recap skip + Smart ad matching (zero revenue risk). Second: Earned skip + Premium pass. Third: AI dead-moment skip.</p></div>
+        <div class="pm-section"><div class="pm-section-h">North Star Metric</div><p>Ad completion rate while maintaining user retention — forces simultaneous optimization of both sides.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Permission to skip <em>reduces</em> actual skipping. When users know they CAN skip, they're less anxious about ads and paradoxically skip less. Skip is a trust mechanism.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Design</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Design a vending machine for blind people.</h3>
+        <p class="pm-post-preview">Framework: 3 stages of interaction (Discovery → Operation → Retrieval) → Senses → Edge cases</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Stage 1 — Discovery</div><p>Bluetooth beacon — "Vending machine 8 meters ahead, slightly left" · Soft distinct hum on approach within 2m · Tactile ground path — raised floor strips leading to machine.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Stage 2 — Operation</div><p>Braille labels on every button · Headphone jack for private audio · <strong>Voice interface modes</strong> — category mode, budget mode, quick mode ("same as last time") · Each item described — name, price, ingredients, allergens.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Stage 3 — Retrieval</div><p>"Your item is ready. Collect from the bottom tray." · Raised edges — product can't fall off · 15-second window with audio reminders.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Edge Cases</div><p>Out of stock → "Similar option at ₹35?" · Payment failed → "Use cash slot on your right" · No smartphone → machine fully operable via tactile keypad alone.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> The app enhances but the machine must be fully operable without a phone. The app is the premium layer — not the only layer. Hardware PM rule: never make the core use case device-dependent.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Design</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Design a SMART keyboard product.</h3>
+        <p class="pm-post-preview">Framework: Hardware PM — Clarify → Goal → User Pain Points → P1/P2/P3 Prioritization → Metrics</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Goal</div><p>Increase revenue with a SMART keyboard targeting underserved use cases (India's multi-language users, students, visually impaired, professionals) in a market accustomed to conventional keyboards.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Top Pain Points</div><p>Multi-language barrier — India has 22+ official languages; typing in native language on English keyboard is hard · Portability — too bulky to carry · Multi-device hassle — can't use one keyboard across phone, laptop, tablet · Typing accuracy — frequent typos, no voice-to-text · Digital illiteracy — many users can't type using a keyboard.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Prioritized Solutions</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">P1</span><span>Foldable design — fits in a purse or pocket (portability)</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">P1</span><span>Universal connectivity — one keyboard for phone, laptop, smartwatch, tablet</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">P1</span><span>Voice-to-text control — converts voice to text (accessibility + typing accuracy)</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">P2</span><span>Regional language converter — type in any of India's languages</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">P2</span><span>Auto-suggestion and correction dictionary</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">P3</span><span>Quick-note section — type or voice, erasable like a notebook</span></div>
+        </div></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> P1 features must be core to the product's reason to exist. P2 significantly enhance experience. P3 are nice-to-haves. Always justify with business value and user impact — not just feasibility.</div>
+      </div></div>
+    </article>
+
+  </div></div>
+
+  <!-- TAB: RCA -->
+  <div class="pm-tab-pane" id="tab-rca"><div class="pm-posts">
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Root Cause Analysis</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Order cancellations on Amazon are up 10%. Identify the root cause.</h3>
+        <p class="pm-post-preview">Framework: Scope → User Journey Stage Analysis → Internal → External → Root Cause → Fix</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Clarifying Questions</div><p>How long has this been happening? Is it specific to Amazon or industry-wide? Isolated to a product category (groceries vs. electronics)? Geographic concentration? Platform — app, desktop, or both? Any recent changes to product listing, cart, or payment flow?</p></div>
+        <div class="pm-section"><div class="pm-section-h">User Journey Stage Analysis</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Discovery</span><span>Algorithm changes to search or recommendations?</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Product page</span><span>Changes to listing layout, add-to-cart, discounts shown?</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Payment</span><span>Specific payment modes failing? Recently removed methods?</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Confirmation</span><span>Delays in order confirmation? Route/pin-code-specific cancellations?</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Root Cause Hypotheses (Ranked)</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">H1 · High</span><span>Payment failure spike — removed payment method or gateway outage</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">H2 · Medium</span><span>Price mismatch — product shows different price at checkout vs. listing</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">H3 · Low</span><span>Delivery estimate degraded — longer ETAs post-peak season</span></div>
+        </div></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Always map the cancellation point in the user journey first. A cancellation after payment is a fundamentally different problem than a cancellation at checkout — they have different root causes and different fixes.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Root Cause Analysis</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Uninstalls of a mobile banking app are increasing. Identify the root cause.</h3>
+        <p class="pm-post-preview">Framework: Scope → Internal (update? campaign? bugs?) → External (competitors? regulation?) → Root Cause</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Context</div><p>15-year-old legacy private bank in India going digital. Uninstalls started rising gradually last weekend. Both Android and iOS affected. A UI update was released 8–9 days ago. A marketing campaign offering credit to new installers was also recently active.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Investigation Path</div><p><strong>Internal:</strong> Recent UI update (8–9 days ago, matches timing) · Marketing campaign for new installers · No significant bugs found · No feature additions or deletions · <strong>External:</strong> No data leaks, no PR issues, no regulations · New neo-bank targeting students with promotional features.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Root Cause</div><p>The marketing campaign acquired users with <strong>low product stickiness</strong> — users came for the free credit, utilized it, then had no compelling reason to stay. The neo-bank was NOT the root cause — loyal banking consumers don't switch that drastically in a week.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Recommendations</div><p>Segment users into cohorts by usage patterns · For campaign-acquired users with low activation: improve onboarding and activation touchpoints · For acquired-and-activated users who still uninstall: investigate specific feature drop-offs · Track campaign-driven vs. organic churn separately.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Always investigate campaign timing vs. metric change timeline as an early hypothesis in any uninstall/churn RCA. Promotional installs create artificial spikes that collapse — they mask real retention problems.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Root Cause Analysis</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">A key metric for a video streaming service dropped 80%. What do you do?</h3>
+        <p class="pm-post-preview">Framework: Clarify → Data Integrity → Internal/External → Segment → Correlate → Act</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">First Move — Clarify</div><p>Ask: "Which metric dropped?" Never jump to solutions. Which metric (DAU, watch time, revenue)? 80% vs what baseline (yesterday, last week)? All users or a specific segment? Sudden or gradual? What changed around that time?</p></div>
+        <div class="pm-section"><div class="pm-section-h">Universal Diagnostic Framework</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Step 1</span><span>Is it a data/tracking bug? (80% is suspicious — verify the data is real first)</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 2</span><span>Is it internal? Recent deployment, feature flag, infrastructure outage?</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 3</span><span>Is it external? Competitor launched, app store issue, seasonal?</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 4</span><span>Is it a segment issue? Specific geography, device, cohort?</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 5</span><span>Correlate with last change — deployment timestamp, campaign, content removal</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Immediate Actions</div><p><strong>First 30 mins:</strong> Check analytics tracking, system dashboard, alert engineering. <strong>First 2 hours:</strong> Segment the drop, check deployment correlation. <strong>First 24 hours:</strong> Root cause identified, hotfix deployed, stakeholder comms sent.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> An 80% drop almost always means a data tracking bug or a recent deployment broke something. Diagnose before prescribing. Spending on fixes before you know the root cause wastes time and trust.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Root Cause Analysis</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Drivers are dropping out of a city on Lyft. How do you figure out what's going on?</h3>
+        <p class="pm-post-preview">Framework: Clarify → 4 Buckets (Earnings / Experience / External / Policy) → Diagnose → Fix</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Why This Matters</div><p>Fewer drivers → longer wait times → riders switch to Uber → less revenue → marketplace collapses. Supply-side crises kill two-sided marketplaces fast and are hard to reverse.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Clarify First</div><p>Which city? What magnitude? What timeframe? New drivers not joining OR existing drivers going inactive OR switching to Uber? City-specific or systemic?</p></div>
+        <div class="pm-section"><div class="pm-section-h">4 Hypothesis Buckets</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Earnings</span><span>Pay rates cut, surge pricing changed, fuel prices spiked, Uber offering sign-on bonuses</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Experience</span><span>App bugs, unfair deactivation spike, rating system change, rider safety concerns</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">External</span><span>Strong local job market, competitor acquisition campaign, seasonal, new gig regulation</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Policy</span><span>Background check deactivated a batch, vehicle requirement updated, insurance policy changed</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Solutions by Root Cause</div><p>Earnings → incentive program, surge sensitivity, fuel subsidy · Competitor poaching → retention bonuses, loyalty program · Policy deactivation → audit deactivations, create appeals process · App experience → emergency engineering fix.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Launching incentives immediately is wrong — expensive and misses the diagnosis. Each root cause has a completely different solution. Spending on incentives when the real problem is a buggy app just wastes budget.</div>
+      </div></div>
+    </article>
+
+  </div></div>
+
+  <!-- TAB: METRICS -->
+  <div class="pm-tab-pane" id="tab-metrics"><div class="pm-posts">
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Metrics</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">What metrics would you use to measure the success of the Save feature at Facebook?</h3>
+        <p class="pm-post-preview">Framework: North Star → Primary → Secondary → Guardrail Metrics</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Core Insight</div><p>Saving a post is only half the job. The real value is <em>coming back to it later</em>. A save never revisited is a failed save experience — like bookmarking 100 tabs you never open.</p></div>
+        <div class="pm-section"><div class="pm-section-h">North Star Metric</div><p>Saved posts revisited within 7 days / Total saves — captures the complete save-retrieve loop, not just the save action.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Metric Hierarchy</div><p><strong>Adoption:</strong> % of DAU using Save · saves per active user per week · <strong>Engagement:</strong> Save-to-revisit rate · time between save and revisit · saves by content category · <strong>Retention:</strong> Saved collection return rate · 30-day feature retention.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Guardrails</div><p>Overall newsfeed engagement · Time spent on Facebook · Content creator reach — saving should not reduce any of these.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Users who view the same content 2–3x are prime candidates for a Save prompt. Behavior → product trigger. That behavioral proxy is a better signal than asking users if they want to save.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Metrics</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">How would you measure the success of Facebook Likes?</h3>
+        <p class="pm-post-preview">Framework: Three-party (Liker + Creator + Platform) → Like Quality → Guardrails</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Three-Party Framework</div><p><strong>Liker</strong> — expression value: like rate per session, time on post before liking · <strong>Creator</strong> — validation value: likes per post, posting frequency post-likes · <strong>Platform</strong> — algorithm signal: like accuracy rate, like-bait detection.</p></div>
+        <div class="pm-section"><div class="pm-section-h">North Star Metric</div><p>Like-to-meaningful-engagement conversion rate — % of liked posts where the user also commented, shared, or saved.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Like Quality Split</div><p><strong>Low quality:</strong> passive scroll tap, like-bait content, no further action · <strong>High quality:</strong> intentional (3+ seconds on post), comment or share follows.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Guardrails</div><p>Comment rate · Share rate · User wellbeing score — like anxiety is a real product risk that needs a guardrail metric.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Facebook's Likes dilemma — too many likes on low-quality content degrades feed, but removing likes reduces creator motivation. The real metric is <em>like accuracy</em>, not like volume.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Metrics</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">A SaaS company is aggressively optimizing free-to-paid conversion. What guardrail metrics should they track?</h3>
+        <p class="pm-post-preview">Framework: Primary metric risk → Guardrail hierarchy → Threshold definitions</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">The Risk</div><p>Over-optimization of free-to-paid conversion can cause short-term sign-ups that churn quickly — inflating costs without sustainable revenue. Conversion rate is a leading indicator; retention is the lagging confirmation.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Guardrail Metrics</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Churn Rate</span><span>Above 5% monthly is a red flag — ensures new users stay after first billing cycle</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">NPS</span><span>Drop below 30 triggers review — ensures onboarding isn't rushed or confusing</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Operational Costs</span><span>Above 120% of baseline — prevents unsustainable marketing spend</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Feature Adoption Rate</span><span>Ensures resources aren't wasted on unused features that don't drive retention</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Outcome</div><p>When guardrails are defined upfront: conversion rate can increase 15% while churn and costs remain stable — sustainable growth without compromising customer relationships.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Guardrail metrics are not success metrics — they're safety rails. They don't tell you if you're winning. They tell you if optimizing one thing is breaking something else.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Product Metrics</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Identify one metric for Facebook Marketplace that the whole team should monitor daily.</h3>
+        <p class="pm-post-preview">Framework: The "one metric" test — captures ALL stakeholder value simultaneously</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">The One Metric</div><p><strong>Transaction Completion Rate</strong> — % of buyer-seller conversations that result in a completed transaction.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Why This Above All Others</div><p>High listings + low transaction rate = marketplace full of unsold items → sellers leave → marketplace dies. This metric can only be high if supply quality AND buyer experience AND trust AND pricing all work. It captures both sides simultaneously.</p></div>
+        <div class="pm-section"><div class="pm-section-h">What a Drop Diagnoses</div><p>Listing quality declining → seller onboarding · Buyers not trusting → verification · Search broken → algorithm · Payment friction → UX.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Guardrail</div><p>Fraud rate — transaction completion must rise WITHOUT fraud rising. Otherwise you're just completing bad transactions.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> For "pick ONE metric" questions — find the metric whose drop immediately signals something is broken AND whose improvement automatically improves everything else. That's the north star test.</div>
+      </div></div>
+    </article>
+
+  </div></div>
+
+  <!-- TAB: STRATEGY -->
+  <div class="pm-tab-pane" id="tab-strategy"><div class="pm-posts">
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Strategy &amp; GTM</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">How would you launch Google's driverless car service?</h3>
+        <p class="pm-post-preview">Framework: USP → Market segments → Pre-launch pilots → Pricing → Launch activities → Risk</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Google's Moat</div><p>The moat isn't the car — it's the ecosystem. Google Home + Assistant + Maps makes the experience end-to-end and emotionally compelling. Lead with the ecosystem story, not the hardware.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Pre-Launch Pilots</div><p><strong>Pilot 1 (Consumer):</strong> Google Chauffeur for families — daily pick-up/drop-off. Lottery-based selection, safety driver present, 1-week pilot in SF or Manhattan. <strong>Pilot 2 (Commercial):</strong> Package delivery partnership with FedEx/UPS for high visibility + software training data collection.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Pricing Strategy</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Monthly</span><span>$100/month — introductory, at cost to build initial user base</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Annual</span><span>$90/month — incentivize commitment</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">B2B</span><span>$300K per use — for industrial/government clients, cheaper than armored transport</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Launch Activities</div><p>Press event inviting all major tech publications · Highway billboards with "Google Chauffeur at your service" · Open developer platform — leverage Google's developer network · Strong PR strategy for accident response prepared in advance.</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Google Home monitors the route, sends safety notifications to parents, drone delivery from the van — the product story is the ecosystem, not the car. Always lead with the emotional hook that makes a new product category feel safe.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Strategy &amp; GTM</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">You're CEO of a startup with a teleportation machine. What's your target market and GTM?</h3>
+        <p class="pm-post-preview">Framework: Breadth-first use case buckets → Business model → Pricing → Revenue projection</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Machine Specs</div><p>Phone-booth sized · Works for people and objects · $10M to build, $100K per use · Max 10 units/year · Fully patented, biometric DNA-based access · Annual servicing needed.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Use Case Buckets (Breadth-First)</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Industrial · Best fit</span><span>One-way transport of precious materials (gems, gold) — eliminates armored truck cost. De Beers: $2M/shipment vs $1.8M teleportation.</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Business · Strong</span><span>Fortune 100 CXO transport — instant, safer and faster than private jets at comparable cost</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Government · Complex</span><span>Head-of-state transport — fastest/most secure, but machine needed at every destination = cost multiplier</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Perishables · Avoid</span><span>Volume constraint + cost doesn't justify for food transport</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Business Model — Pay Per Use</div><p>Year 1: Machine at cost ($10M) + $300K/use · 8 machines × $10M = $80M machine revenue · 8 machines × 200 uses × $300K = $480M usage revenue · <strong>Total Year 1: $560M</strong></p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Organize use cases breadth-first into buckets (Personal/Business/Industrial/Government) before diving deep. This shows structured thinking vs. random list generation. The industrial segment wins because one-way transport IS the primary use case.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Strategy &amp; GTM</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Recommend a pricing strategy for a new cloud-based project management SaaS.</h3>
+        <p class="pm-post-preview">Framework: Segment → Competitive benchmark → Value-based pricing → Tiered subscription + Freemium</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Customer Segments</div><p><strong>Small businesses (1–20 users):</strong> Cost-conscious, need simplicity · <strong>Mid-sized (20–200):</strong> Feature-driven, ROI focused · <strong>Enterprise (200+):</strong> Security, integrations, SLA critical.</p></div>
+        <div class="pm-section"><div class="pm-section-h">Recommended Pricing Structure</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Basic</span><span>$15/user/month — core PM features, limited storage, essential collaboration</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Premium</span><span>$30/user/month — advanced features, unlimited storage, priority support, integrations</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Enterprise</span><span>Custom — SSO, admin controls, dedicated account manager, SLA</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Free Trial</span><span>14 days full Premium access — convert users by demonstrating core value first</span></div>
+        </div></div>
+        <div class="pm-section"><div class="pm-section-h">Validation Metrics</div><p>Free-to-paid conversion rate · Trial-to-subscription rate · Revenue per seat · Churn rate by tier · Expansion revenue (upgrades from Basic to Premium).</p></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Freemium or free trial is critical for B2B SaaS. Let potential customers experience the product's core value before asking for payment — this dramatically improves conversion rates vs. gated demos.</div>
+      </div></div>
+    </article>
+
+  </div></div>
+
+  <!-- TAB: GUESSTIMATES -->
+  <div class="pm-tab-pane" id="tab-guess"><div class="pm-posts">
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Guesstimate</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Calculate the number of Google searches per second.</h3>
+        <p class="pm-post-preview">Framework: Top-down — Earth population → Internet users → Google users → Segment by frequency → Daily → Per second</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Funnel Calculation</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Step 1</span><span>Earth population: 8B · Minus China (no Google): ~6.5B</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 2</span><span>Internet penetration (75%): 6.5B × 0.75 = 4.875B</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 3</span><span>Google market share (80%): 4.875B × 0.80 = ~3.9B Google users</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 4</span><span>Aggressive (30%) × 5 searches = 5.85B · Active (40%) × 3 = 4.68B · Passive (30%) × 1 = 1.17B</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Total</span><span>11.7B searches/day ÷ 86,400 seconds ≈ <strong>135,000 searches/second</strong></span></div>
+        </div></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> The methodology matters far more than the exact number. Always think out loud, validate assumptions, and segment users by behavior — not just count them.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Guesstimate</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Estimate the number of ATMs in India.</h3>
+        <p class="pm-post-preview">Framework: Top-down — Population → Urban/Rural split → ATM user HHs → Density ratio → Total</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Equation</div><p>Total ATMs = ATMs in Urban India + ATMs in Rural India</p></div>
+        <div class="pm-section"><div class="pm-section-h">Calculation</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Urban</span><span>450M (30% of India) · 112.5M HHs · 80% ATM users = 90M HHs · ~117M users · 1 ATM per 500 users = 234,000 ATMs</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Rural</span><span>1.05B (70%) · 262.5M HHs · 30% ATM users = 78.75M HHs · ~86.6M users · 1 ATM per 5,000 = 17,325 ATMs</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Total</span><span>~251,325 ATMs (Actual: ~266,000 — estimate is ~95% accurate)</span></div>
+        </div></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Use the urban/rural split as the primary segmentation layer for any India-specific guesstimate. The behavioral and infrastructure differences between segments are large enough to significantly change the estimate.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Guesstimate</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Estimate the daily revenue of a McDonald's store in India (Delhi, CP location).</h3>
+        <p class="pm-post-preview">Framework: Bottom-up — Peak/non-peak hours → Occupancy → Customers → Avg order value → Weekday vs weekend</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Key Assumptions</div><p>Store capacity: 150 customers · Turnaround: 60 mins · Focus: Dine-in + Takeaways only</p></div>
+        <div class="pm-section"><div class="pm-section-h">Revenue Calculation</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Weekday Peak</span><span>4 hrs · 80% occupancy = 120/hr · 480 customers · ₹150 avg = ₹72,000</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Weekday Non-Peak</span><span>8 hrs · 60% occupancy = 90/hr · 720 customers · ₹100 avg = ₹72,000</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Weekend Peak</span><span>6 hrs · 100% occupancy = 150/hr · 900 customers · ₹180 avg = ₹1,62,000</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Weekend Non-Peak</span><span>6 hrs · 80% occupancy = 120/hr · 720 customers · ₹120 avg = ₹86,400</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Average Daily</span><span>(₹1,44,000 × 5 + ₹2,48,400 × 2) ÷ 7 ≈ <strong>₹1,73,829/day</strong></span></div>
+        </div></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Always split by weekday/weekend for retail and food guesstimates — the difference in occupancy and average order value is large enough to significantly change the final number.</div>
+      </div></div>
+    </article>
+
+    <article class="pm-post">
+      <div class="pm-post-trigger" onclick="togglePost(this)">
+        <div class="pm-post-meta"><span class="pm-post-type">Guesstimate</span><span class="pm-post-status done">✓ Solved</span></div>
+        <h3 class="pm-post-title">Estimate WhatsApp messages sent per day in India.</h3>
+        <p class="pm-post-preview">Framework: Top-down funnel → Age segment by usage intensity → Sum daily messages</p>
+        <div class="pm-post-chevron">↓</div>
+      </div>
+      <div class="pm-post-body"><div class="pm-post-content">
+        <div class="pm-section"><div class="pm-section-h">Funnel</div><div class="pm-h-list">
+          <div class="pm-h-item"><span class="pm-h-rank">Step 1</span><span>India population 1.3B → Internet penetration 50% = 650M</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Step 2</span><span>Smartphone users 60% = 390M → WhatsApp penetration 80% = 312M users</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">10–24 yrs</span><span>150M users → Heavy 70% (105M msgs) + Medium 20% (30M) + Light 10% (15M) = 150M msgs</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">25–35 yrs</span><span>100M users → 60/30/10 split = 100M msgs</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">36–50 yrs</span><span>50M users → 50/30/20 split = 50M msgs</span></div>
+          <div class="pm-h-item"><span class="pm-h-rank">Total</span><span>~312M messages/day in India</span></div>
+        </div></div>
+        <div class="pm-key-insight"><strong>Key Insight:</strong> Age-based segmentation with heavy/medium/light usage splits is the cleanest approach for messaging app guesstimates. Don't just multiply total users by one average — that ignores behavioral variation.</div>
+      </div></div>
+    </article>
+
+  </div></div>
+
+</div></section>
+<div class="divider"></div>
+<!-- SIDE PROJECTS -->
+<section id="sideprojects" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">Side Projects &amp; Experiments</p><h2 class="section-title">Built to learn. <em>Not shipped yet.</em></h2></div>
+  <div class="side-grid">
+
+    <div class="side-card reveal">
+      <div class="side-card-badge">Voice AI · Conversation Design · Experiment</div>
+      <div class="side-card-title">Voice AI Agent — HNI Lead Qualification Bot</div>
+      <div class="side-card-desc">Designed and built a full outbound Voice AI conversation architecture for a real estate client targeting HNI/CXO/NRI buyers for a premium villa project near Nandi Hills, Bengaluru. Built on Bolna AI (YC-backed) for native Hindi/Hinglish support. Designed permission-first opening, language-mirroring rules, hard 3-minute call cap, edge-case handling, and a pronunciation dictionary for Indian brand names. Treated the conversation flow as a product requirement — not a script. Iterated after first live call.</div>
+      <div class="side-card-tags">
+        <span class="t-tag">Voice AI</span><span class="t-tag">Bolna AI</span>
+        <span class="t-tag">Conversation Design</span><span class="t-tag">Real Estate</span>
+      </div>
+    </div>
+
+    <div class="side-card reveal reveal-delay-1">
+      <div class="side-card-badge">UX Research · Figma · Prototyping</div>
+      <div class="side-card-title">WiseHome — Home Automation for Elderly Users</div>
+      <div class="side-card-desc">User research-led redesign of a home automation app for elderly users. Conducted structured research sessions, mapped onboarding friction, and built rapid prototypes in Figma. Eliminated nested menus, made voice command first-class, and reduced onboarding to 3 screens. 40% usability improvement and 25% faster onboarding measured via structured testing.</div>
+      <div class="side-card-tags">
+        <span class="t-tag">Figma</span><span class="t-tag">User Research</span>
+        <span class="t-tag">Accessibility</span>
+      </div>
+    </div>
+
+    <div class="side-card reveal reveal-delay-2">
+      <div class="side-card-badge">MVP · A/B Testing · Growth</div>
+      <div class="side-card-title">Abhivriddhi EDGE — Participant Engagement Platform</div>
+      <div class="side-card-desc">Full MVP for a student training committee's participant engagement platform. Defined user segments, flows, and success metrics before building. Ran A/B experiments on onboarding copy and CTA placement with explicit hypotheses. 1,400+ active users. 30% adoption improvement from experiment findings. Platform still live.</div>
+      <div class="side-card-tags">
+        <span class="t-tag">MVP</span><span class="t-tag">A/B Testing</span>
+        <span class="t-tag">1,400+ Users</span>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">Skills</p><h2 class="section-title">What I bring <em>to the table.</em></h2></div>
+  <div class="skills-layout">
+    <div class="skills-left reveal">
+      <h3>From systems engineering to AI products — the toolbox reflects the journey.</h3>
+      <p style="margin-top:1rem">Every skill listed here has been applied on a real project. No certifications without application.</p>
+    </div>
+    <div class="skills-right">
+      <div class="reveal">
+        <div class="skill-cat-label">AI Product Management</div>
+        <div class="skill-pills">
+          <span class="pill">LLM Prompting</span><span class="pill">System Prompt Design</span>
+          <span class="pill">AI Agent Architecture</span><span class="pill">MCP Servers</span>
+          <span class="pill">Voice AI</span><span class="pill">Conversation Design</span>
+          <span class="pill">PRD Writing</span><span class="pill">User Research</span>
+          <span class="pill">Roadmapping</span><span class="pill">RICE / ICE Prioritization</span>
+          <span class="pill">OKRs</span><span class="pill">North Star Metrics</span><span class="pill">A/B Testing</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="skill-cat-label">Operations &amp; Strategy</div>
+        <div class="skill-pills">
+          <span class="pill">PMO Setup</span><span class="pill">Sprint Planning</span>
+          <span class="pill">Financial Modelling</span><span class="pill">MIS Reporting</span>
+          <span class="pill">GTM Strategy</span><span class="pill">B2G / B2B Planning</span>
+          <span class="pill">Market Sizing</span><span class="pill">Competitive Analysis</span>
+          <span class="pill">Cross-functional Execution</span><span class="pill">Stakeholder Management</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="skill-cat-label">Tools</div>
+        <div class="skill-pills">
+          <span class="pill">Figma</span><span class="pill">Notion</span><span class="pill">JIRA</span>
+          <span class="pill">Streamlit</span><span class="pill">Zoho Recruit</span>
+          <span class="pill">MS 365</span><span class="pill">Power BI</span>
+          <span class="pill">Whimsical</span><span class="pill">n8n · Zapier</span><span class="pill">Claude Code</span><span class="pill">Cursor · Lovable</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="skill-cat-label">Technical</div>
+        <div class="skill-pills">
+          <span class="pill">Python</span><span class="pill">OpenAI API</span>
+          <span class="pill">Zoho API</span><span class="pill">MCP Server Architecture</span>
+          <span class="pill">REST APIs</span><span class="pill">LLM Integration</span>
+          <span class="pill">Agentic Workflows</span><span class="pill">ANSYS (FEA)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<div class="divider"></div>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">Recognition</p><h2 class="section-title">Achievements &amp; <em>Laurels.</em></h2></div>
+  <div class="ach-grid">
+    <div class="ach-card reveal">
+      <div class="ach-rank">AIR 5</div>
+      <div class="ach-name">Formula Bharat 2024</div>
+      <div class="ach-desc">EV Category — National Level. Authored the business plan end-to-end. VIT Pune on a national stage.</div>
+    </div>
+    <div class="ach-card reveal reveal-delay-1">
+      <div class="ach-rank">2nd</div>
+      <div class="ach-name">Ather Energy Pi-EV 2023</div>
+      <div class="ach-desc">Team Management Strategy Report. 4th in Procurement Strategy. 3rd overall nationally — achieved in first year of college.</div>
+    </div>
+    <div class="ach-card reveal reveal-delay-2">
+      <div class="ach-rank">Top 10</div>
+      <div class="ach-name">Smart India Hackathon 2025</div>
+      <div class="ach-desc">Internal SIH, VIT Pune — Top 10 out of 925+ teams. Structured an ambiguous problem into an executable solution under tight timelines.</div>
+    </div>
+    <div class="ach-card reveal">
+      <div class="ach-rank">Patent</div>
+      <div class="ach-name">App. No. 202521093278</div>
+      <div class="ach-desc">"Parabolic Light Concentrator as a Pre-Heater for Solar Stills." Published Oct 2025. Grant pending.</div>
+    </div>
+    <div class="ach-card reveal reveal-delay-1">
+      <div class="ach-rank">Scopus</div>
+      <div class="ach-name">MSMAT 2025 · ICCRET 2025</div>
+      <div class="ach-desc">Research presented at two international conferences. Scopus-indexed. Systematic experimentation, academic rigour.</div>
+    </div>
+  </div>
+</div></section>
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="section"><div class="section-inner">
+  <div class="section-header reveal"><p class="section-label">Contact / Resume</p><h2 class="section-title">Let's build something <em>worth building.</em></h2></div>
+  <div class="contact-grid">
+    <div class="contact-left reveal">
+      <p class="contact-statement">If you're building something hard in AI and need someone who can <em>think in frameworks and ship in reality</em> — let's talk.</p>
+      <div class="contact-items">
+        <a href="mailto:omkarrasal865@gmail.com" class="contact-item">
+          <span class="contact-item-icon">✉</span> omkarrasal865@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/omkarrasal865" target="_blank" class="contact-item">
+          <span class="contact-item-icon">↗</span> linkedin.com/in/omkarrasal865
+        </a>
+        <a href="tel:+919819139288" class="contact-item">
+          <span class="contact-item-icon">☎</span> +91 98191 39288
+        </a>
+      </div>
+      <!--
+        RESUME LINKS — replace href="#" with your actual file path:
+        Current setup: PDFs are in the same folder as index.html, so direct download links work on GitHub and Vercel.
+      -->
+      <div class="resume-row">
+        <a href="PM_Omkar_Rasal_Resume.pdf" class="btn-purple" download>PM / APM / AI PM Resume ↓</a>
+        <a href="FO_COS_Omkar_Rasal_Resume.pdf" class="btn-outline" download>Founder's Office / CoS Resume ↓</a>
+      </div>
+    </div>
+    <div class="contact-right reveal reveal-delay-2">
+      <div class="currently-card">
+        <div class="currently-label">Right Now</div>
+        <div class="currently-items">
+          <div class="currently-item">Actively applying for APM / AI PM / Chief of Staff roles</div>
+          <div class="currently-item">Continuing Founder's Office work at ERIC Robotics</div>
+          <div class="currently-item">Solving PM problems — metrics, RCA, product design</div>
+          <div class="currently-item">Adding case studies as work ships</div>
+          <div class="currently-item">Available to join immediately</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <span class="footer-copy">© 2026 Omkar Kishor Rasal · Built to ship, not to impress.</span>
+  <div class="footer-links">
+    <a href="mailto:omkarrasal865@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/omkarrasal865" target="_blank">LinkedIn</a>
+    <a href="#work">Work</a>
+    <a href="#problems">PM Problems</a>
+  </div>
+</footer>
+
+<script>
+/* ── PARTICLES ── */
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+let W,H,dots=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+for(let i=0;i<80;i++)dots.push({x:Math.random()*1400,y:Math.random()*900,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5});
+function drawParticles(){
+  ctx.clearRect(0,0,W,H);
+  dots.forEach(d=>{
+    d.x+=d.vx;d.y+=d.vy;
+    if(d.x<0||d.x>W)d.vx*=-1;
+    if(d.y<0||d.y>H)d.vy*=-1;
+    ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(124,92,191,0.4)';ctx.fill();
+  });
+  dots.forEach((a,i)=>dots.slice(i+1).forEach(b=>{
+    const dx=a.x-b.x,dy=a.y-b.y,dist=Math.sqrt(dx*dx+dy*dy);
+    if(dist<120){
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle=`rgba(124,92,191,${.15*(1-dist/120)})`;
+      ctx.lineWidth=.5;ctx.stroke();
+    }
+  }));
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+
+/* ── CURSOR ── */
+const cur=document.getElementById('cursor');
+const ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+document.querySelectorAll('a,button,.work-trigger,.pm-post-trigger').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(124,92,191,0.8)';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(124,92,191,0.5)';});
+});
+
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+},{passive:true});
+
+/* ── MOBILE MENU ── */
+const mobileMenu=document.getElementById('mobileMenu');
+const hamburger=document.getElementById('hamburger');
+function toggleMobile(){hamburger.classList.toggle('open');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';}
+function closeMobile(){hamburger.classList.remove('open');mobileMenu.classList.remove('open');document.body.style.overflow='';}
+
+/* ── REVEAL ON SCROLL ── */
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+}),{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ── WORK ACCORDION ── */
+function toggleWork(btn){
+  const item=btn.closest('.work-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.work-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+/* ── PM POST ACCORDION ── */
+function togglePost(trigger){
+  const post=trigger.closest('.pm-post');
+  if(!post||post.classList.contains('pm-post-wip'))return;
+  const wasOpen=post.classList.contains('open');
+  const pane=post.closest('.pm-tab-pane');
+  if(pane)pane.querySelectorAll('.pm-post.open').forEach(p=>p.classList.remove('open'));
+  if(!wasOpen)post.classList.add('open');
+}
+
+/* ── PM TABS ── */
+function switchTab(btn,id){
+  document.querySelectorAll('.pm-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.pm-tab-pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+
+/* ── ACTIVE NAV HIGHLIGHT ── */
+const sections=document.querySelectorAll('section[id]');
+const navAs=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-180)current=s.id;});
+  navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+current?'var(--off)':'';});
+},{passive:true});
+</script>
+</body>
+</html>
